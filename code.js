@@ -29,12 +29,19 @@ function clickButton(){
 
 function clickButtonNum(){
 
+    document.getElementById("outputnum").innerHTML = ""
     num = document.getElementById("inputnum").value 
+
     try{
-        if(num == '') throw "Insira um valor"
+        if(num == '') throw "Insira um valor";
+        if(num <= 5 || num >= 10) throw "Insira um valor maior que 5 e menor que 10";
     }
+    
     catch(error){
         document.getElementById("outputnum").innerHTML = error
     }
-    console.log(num)
+
+    finally{
+       alert("O número inserido foi: " + num);
+    }
 }
